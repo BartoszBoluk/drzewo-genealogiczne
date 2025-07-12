@@ -1,15 +1,15 @@
-// src/router/index.js
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
-import UserRegister from '../components/UserRegister.vue'
-import UserLogin from '../components/UserLogin.vue'
 import Dashboard from '../views/Dashboard.vue'
+import UserLogin from '../components/UserLogin.vue'
+import UserRegister from '../components/UserRegister.vue'
+import PersonDetails from '../views/PersonDetails.vue'
 
 const routes = [
-  { path: '/', name: 'Home', component: Home },
-  { path: '/register', name: 'Register', component: UserRegister },
+  { path: '/', redirect: '/login' },
   { path: '/login', name: 'Login', component: UserLogin },
-  { path: '/dashboard', name: 'Dashboard', component: Dashboard }
+  { path: '/register', name: 'Register', component: UserRegister },
+  { path: '/dashboard', name: 'Dashboard', component: Dashboard },
+  { path: '/person/:id', name: 'PersonDetails', component: PersonDetails }
 ]
 
 const router = createRouter({
